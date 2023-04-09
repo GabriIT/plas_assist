@@ -1,0 +1,52 @@
+version: "3.0"
+
+intents:
+  - greet
+  - inform
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+
+entities:
+  - choice
+
+slots:
+  choice:
+    type: categorical
+    values:
+      - transparent
+      - metal replacement
+      - sanitary application
+    mappings:
+      - type: from_entity
+        entity: choice
+
+responses:
+  utter_select:
+    - text: "Type 'transparent', 'metal replacement' or 'sanitary' to start."
+
+  utter_select_again:
+    - text: "Do you want to select again?"
+
+  utter_TR:
+    - text: "You selected the DIAMOND material!"
+
+  utter_MR:
+    - text: "You selected GRIVORY IS OUR STEEL: HT AND GV"
+
+  utter_SA:
+    - text: "You selected VICTORIA: sanitary-approved material"
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Gabriele."
+
+actions:
+  - action_play_rps
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

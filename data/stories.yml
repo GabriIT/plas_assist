@@ -1,0 +1,37 @@
+version: "3.0"
+stories:
+  - story: select transparent
+    steps:
+      - intent: greet
+      - action: utter_TR
+      - intent: inform
+      - action: action_play_rps
+      - action: utter_select_again
+
+  - story: metal replacement
+    steps:
+      - intent: greet
+      - action: utter_MR
+      - intent: inform
+      - action: action_play_rps
+      - action: utter_select_again
+
+  - story: sanitary application
+    steps:
+      - intent: greet
+      - action: utter_SA
+      - intent: inform
+      - action: action_play_rps
+      - action: utter_select_again
+
+  - story: select again
+    steps:
+      - action: utter_select_again
+      - intent: affirm
+      - action: utter_select
+
+  - story: don't select again
+    steps:
+      - action: utter_select_again
+      - intent: deny
+      - action: utter_goodbye
